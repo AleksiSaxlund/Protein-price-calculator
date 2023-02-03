@@ -2,10 +2,11 @@ class Calculator:
     #Converts values into floats. Asks new values until floats are given
     def valuechecker(self, value, text: str):
         try:
+            value = value.replace(",", ".")
             value = float(value)
         except ValueError:
             print()
-            print("Please input whole- or decimal numbers using dots.")
+            print("Please input whole- or decimal numbers.")
             value = input(text)
             value = self.valuechecker(value, text)
         return value
